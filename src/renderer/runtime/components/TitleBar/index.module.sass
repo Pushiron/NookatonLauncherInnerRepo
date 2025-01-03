@@ -8,13 +8,23 @@
     padding: 8px
     -webkit-app-region: drag
     justify-content: space-between
-    background: var(--background-color)
-    box-shadow: var(--default-shadow)
+    //background: var(--background-color)
+    //box-shadow: var(--default-shadow)
+    z-index: 1
+    position: relative
     button
         -webkit-app-region: no-drag
         cursor: pointer
         height: 24px
         filter: drop-shadow(var(--default-shadow))
+.titlebarBorder
+    width: 100%
+    height: 1px
+    background: linear-gradient(to right, rgba(230, 181, 46, 0) 30%, rgb(230, 181, 46) 50%, rgba(230, 181, 46, 0) 74%)
+    top: 1px
+    position: absolute
+    left: 0
+    right: 0
 .back
     margin-right: 13px
     &:hover path

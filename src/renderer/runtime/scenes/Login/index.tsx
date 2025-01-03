@@ -2,6 +2,8 @@ import { FormEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import logo from '../../assets/images/logo.png';
+import discord from '../../assets/images/discord.png';
+import youtube from '../../assets/images/youtube.png';
 import { useModal } from '../../components/Modal/hooks';
 import { useTitlebar } from '../../components/TitleBar/hooks';
 import classes from './index.module.sass';
@@ -30,12 +32,12 @@ export default function Login() {
                 'Логин должен быть не менее 3-ёх символов',
             );
         }
-        // if (password.length < 8) {
-        //     return showModal(
-        //         'Ошибка ввода',
-        //         'Пароль должен быть не менее 8-ми символов'
-        //     );
-        // }
+        if (password.length < 8) {
+            return showModal(
+                'Ошибка ввода',
+                'Пароль должен быть не менее 8-ми символов'
+            );
+        }
 
         let userData;
         try {
@@ -54,19 +56,40 @@ export default function Login() {
     };
 
     return (
+        <>
+        <div className={classes.topGradien}>
+            <div className={classes.logo}>
+                <img src={logo} />
+            </div>
+        </div>
         <div className={classes.block}>
-            <img src={logo} />
-            <div>Aurora Launcher</div>
-            <p>
-                Введите логин и пароль,
-                <br />
-                чтобы продолжить
-            </p>
             <form onSubmit={auth}>
-                <input type="text" placeholder="Логин" name="login" />
-                <input type="password" placeholder="Пароль" name="password" />
+                <label>Логин</label>
+                <input type="text" name="login" />
+                <label>Пароль</label>
+                <input type="password" name="password" />
                 <button>Войти</button>
+                <p>Нет аккаунта? <a href="#" onClick={()=>launcherAPI.window.openExternal('http://launcher.nookaton.ru/register.php')}>Создать</a></p>
             </form>
         </div>
+        <div className={classes.bottomGradien}>
+            <div className={classes.socials}>
+                <div className={classes.social}>
+                    <img src={discord} />
+                    <div className={classes.socialText}>
+                        <a href="#" onClick={()=>launcherAPI.window.openExternal('https://discord.gg/Nookaton')}>Discord</a>
+                        <p>@Nookaton</p>
+                    </div>
+                </div>
+                <div className={classes.social}>
+                    <img src={youtube} />
+                    <div className={classes.socialText}>
+                        <a href="#" onClick={()=>launcherAPI.window.openExternal('https://youtube.com')}>YouTube</a>
+                        <p>@Nookaton</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </>
     );
 }

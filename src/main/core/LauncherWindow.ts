@@ -1,7 +1,7 @@
 import { join } from 'path';
 
 import { window as windowConfig } from '@config';
-import { BrowserWindow, app, ipcMain } from 'electron';
+import { BrowserWindow, app, ipcMain, shell } from 'electron';
 import installExtension, {
     REACT_DEVELOPER_TOOLS,
 } from 'electron-extension-installer';
@@ -65,8 +65,12 @@ export class LauncherWindow {
         ipcMain.on(EVENTS.WINDOW.CLOSE, () => {
             this.mainWindow?.close();
         });
-    }
 
+        ipcMain.on(EVENTS.WINDOW.OPEN_EXTERNAL, (_, url: string) =>
+            shell.openExternal(url)
+        )
+    }
+    
     /**
      * Create launcher window
      */

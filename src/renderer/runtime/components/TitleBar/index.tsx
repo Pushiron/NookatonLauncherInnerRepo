@@ -23,6 +23,7 @@ export default function TitleBar() {
 
     return (
         <div className={classes.titlebar}>
+            <div className={classes.titlebarBorder}></div>
             <div>
                 <If state={backBtn.show}>
                     <button className={classes.back} onClick={historyBack}>

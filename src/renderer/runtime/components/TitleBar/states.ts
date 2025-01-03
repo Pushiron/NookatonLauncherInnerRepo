@@ -10,8 +10,8 @@ export const titlebarBackBtn = atom({
 export const titlebarTitle = atom({
     key: 'titlebar.title',
     default: {
-        show: true,
-        text: 'AuroraLauncher v0.0.4',
+        show: false,
+        text: 'Nookaton Launcher v0.0.4 - Alpha',
     },
 });
 

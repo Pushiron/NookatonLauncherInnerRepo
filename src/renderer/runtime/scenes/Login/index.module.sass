@@ -1,29 +1,95 @@
 h1
     text-align: center
+.logo
+    width: 432px
+    height: 71px
+    left: 0
+    right: 0
+    top: 65px
+    position: absolute
+    align-items: center
+    margin: auto
+    display: flex
+    justify-content: center
+.topGradien
+    width: 100%
+    height: 210px
+    background: linear-gradient(180deg, #121212 0%, rgba(18, 18, 18, 0.70) 50%, rgba(18, 18, 18, 0) 100%)
+    z-index: 0
+    top: 0
+    position: absolute
+.bottomGradien
+    width: 100%
+    height: 210px
+    background: linear-gradient(0deg, #121212 0%, rgba(18, 18, 18, 0.70) 50%, rgba(18, 18, 18, 0) 100%)
+    z-index: 0
+    bottom: 0
+    position: absolute
+.socials
+    display: flex
+    align-content: center
+    justify-content: center
+    align-items: center
+    flex-direction: row
+    flex-wrap: wrap
+    top: 100px
+    position: relative
+.social
+    width: 238px
+    height: 72px
+    background-color: rgba(71.19, 71.19, 71.19, 0.30)
+    display: flex
+    align-items: center
+    padding: 0 10px
+    box-sizing: border-box
+    border-radius: 12px
+    margin-left: 20px
+    a
+        font-size: 14px
+        font-weight: bold
+        color: #fff
+    p
+        font-size: 12px
+        color: #ccc
+    img
+        width: 40px
+        height: 40px
+        margin-right: 10px
+.socialText
+    display: flex
+    flex-direction: column
+    flex-wrap: nowrap
+    justify-content: center
+    align-items: flex-start
+    top: 5px
+    position: relative
 .block
-    width: 300px
-    height: 450px
-    background-color: var(--background-color)
+    width: 432px
+    height: 418px
+    background-color: rgba(38, 38, 38, 0.8)//var(--background-color)
     border-radius: 10px
     position: absolute
-    top: 70px
+    top: 170px
     left: 0
     right: 0
     margin: auto
     box-shadow: var(--default-shadow)
-    backdrop-filter: blur(10px)
+    backdrop-filter: blur(1px)
+    padding-top: 70px
     display: flex
     flex-direction: column
     align-items: center
+    z-index: 1
     img
-        height: 100px
-        margin-top: 30px
-        border-radius: 50%
+        height: 25px
+        width: 110px
+        margin-top: 35px
+        margin-bottom: 44px
     div
         font-size: 24px
         margin-top: 20px
     p
-        margin: 20px 0 30px
+        margin: 35px 0 30px
         font-size: 14px
         font-weight: 300
         text-align: center
@@ -32,35 +98,43 @@ h1
         display: flex
         flex-direction: column
         align-items: center
+        width: 100%
+        padding-left: 28px
+        padding-right: 28px
     input
-        width: 194px
-        height: 35px
-        margin-bottom: 15px
-        border: 2px solid var(--primary-color)
-        border-radius: 17px
-        background-color: transparent
-        text-align: center
+        width: 100%
+        height: 39px
+        margin-bottom: 44px
+        border: 2px solid #7A7A7A //2px solid var(--primary-color)
+        border-radius: 3px
+        background-color: rgba(38, 38, 38, 0.8)//transparent
+        //text-align: center
+        padding: 12px
         font-size: 13px
         font-weight: 300
         outline: 0
         &::placeholder
             color: #fff
         &:hover, &:focus
-            border-color: var(--primary-color-hover)
+            border-color: #E6B52E
             &::placeholder
                 color: #ddd
+    label
+        align-self: flex-start
+        font-size: 13px
     button
-        width: 194px
-        height: 35px
+        width: 100%
+        height: 48px
         margin-top: 15px
         border: 0
-        border-radius: 17px
-        background: linear-gradient(135deg, #7F47DD 0%, #2575FC 100%)
+        border-radius: 6px
+        background: linear-gradient(90deg, #FFD465 0%, #F8A528 100%)
         font-size: 16px
+        font-weight: 900
         outline: 0
-        color: #fff
+        color: #78350F //#fff
         text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
-        box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.25)
+        box-shadow: 0px 2px 0px rgba(255, 255, 255, 0.40) inset, 0px 3px 0px rgba(120, 53, 15, 1), 0px 0px 8px 0px rgba(255, 255, 255, 0.5)
         &:hover
-            box-shadow: var(--default-shadow)
-            filter: saturate(150%)
+            //box-shadow: var(--default-shadow)
+            filter: saturate(75%)

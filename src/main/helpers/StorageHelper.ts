@@ -25,9 +25,9 @@ export class StorageHelper {
 
     private static getPlatformStorageDir() {
         if (PlatformHelper.isMac) {
-            return resolve(app.getPath('userData'), "../", "aurora-launcher");
+            return resolve(app.getPath('userData'), "../", "nookaton-launcher");
         }
-        return resolve(homedir(), '.aurora-launcher');
+        return resolve(homedir(), '.nookaton-launcher');
     }
 }
 

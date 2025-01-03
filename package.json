@@ -1,7 +1,7 @@
 {
-    "name": "aurora-launcher-app",
-    "version": "0.0.4",
-    "description": "Launcher for Minecraft",
+    "name": "nookaton-launcher-app",
+    "version": "0.0.5",
+    "description": "Лаунчер проекта Nookaton v.0.0.5",
     "main": "build/main/index.js",
     "private": true,
     "scripts": {
@@ -26,15 +26,15 @@
         "type": "git",
         "url": "git+https://github.com/AuroraTeam/Launcher.git"
     },
-    "author": "AuroraTeam",
+    "author": "Nookaton",
     "contributors": [
-        "JoCat (https://github.com/JoCat)"
+        "Pushiron (https://github.com/Pushiron)"
     ],
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/AuroraTeam/Launcher/issues"
+        "url": "https://github.com/Pushiron/NookatonLauncher/issues"
     },
-    "homepage": "https://github.com/AuroraTeam/Launcher#readme",
+    "homepage": "https://github.com/Pushiron/NookatonLauncher#readme",
     "devDependencies": {
         "@aurora-launcher/esbuild-decorators": "^0.0.1",
         "@types/node": "^18.17.15",
@@ -88,14 +88,19 @@
         }
     },
     "build": {
-        "appId": "ru.aurora.launcher",
-        "productName": "Aurora Launcher",
+        "appId": "ru.nookaton.launcher",
+        "productName": "Nookaton Launcher",
         "publish": [
+            {
+                "provider": "generic",
+                "url": "http://176.117.235.6:1370/files/release",
+                "channel": "latest"
+            },
             {
                 "provider": "github",
                 "releaseType": "release",
-                "owner": "AuroraTeam",
-                "repo": "Launcher"
+                "owner": "Pushiron",
+                "repo": "NookatonLauncher"
             }
         ],
         "directories": {
@@ -108,6 +113,14 @@
         "nsis": {
             "artifactName": "${name}-Setup-${version}.${ext}"
         },
+        "win": {
+            "target": "nsis",
+            "signingHashAlgorithms": [
+                "sha256"
+            ],
+            "certificateFile": "./ssl/Nookaton_Sign.pfx",
+            "certificatePassword": "20290609qweR"
+        },
         "mac": {
             "category": "public.app-category.games"
         },
@@ -118,7 +131,7 @@
                 "AppImage"
             ],
             "category": "Game",
-            "maintainer": "AuroraTeam <null@aurora-team.ru>"
+            "maintainer": "Nookaton <admin@nookaton.ru>"
         }
     },
     "optionalDependencies": {
